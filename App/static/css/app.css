@@ -16,7 +16,7 @@ a:hover{ color: #444; }
 
 .content_holder{ width: 80%; height: 100%; margin: 8% auto; font-size: 60%; }
 
-.bottom{ position: absolute; bottom: 0; left: 0; }
+.bottom{ position: fixed; bottom: 0; left: 0; }
 
 .title{ font-size: 140%; font-family:cardo_bold; }
 .sub_item{ font-size: 70%; }
