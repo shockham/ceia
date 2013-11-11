@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 class="title">{{ concept.title }}</h2>
+    <hr>
+    <div class="markup">{{ concept.markup|safe }}</div>
+    <hr>
+    <ul>
+        {% for c in sub_concepts %}
+            <li class="sub_item">☲ <a href="{{ url_for('routes.concept', concept_slug=c.slug) }}" >{{ c.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

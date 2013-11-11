@@ -1,0 +1,7 @@
+*.pyc
+*.log
+TODO
+.DS_Store
+App/config.cfg
+ceia.conf
+ceia.ini

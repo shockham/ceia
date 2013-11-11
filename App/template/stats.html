@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>page url</th>
+                <th>visits</th>
+                <th>last visited</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in stats %}
+                <tr>
+                    <td>{{ s.page_url }}</td>
+                    <td>{{ s.visits }}</td>
+                    <td>{{ s.created_at }}</td>
+                <tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
