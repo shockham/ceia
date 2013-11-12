@@ -1,10 +1,12 @@
 import hashlib
 from functools import wraps
 from flask import request, Response
+from model import User
 
 
 def check_auth(username, password):
-    return hashlib.sha1(username).hexdigest() == 'd25b8582a731d5187d9820d49ca05a8593bf058e' and hashlib.sha1(password).hexdigest() == '9cdb83764d9cd85af163bb54c7add2674a97f327'
+    user = User.objects.get_or_404(username=username)
+    return hashlib.sha1(password).hexdigest() == user.password
 
 
 def authenticate():
