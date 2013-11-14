@@ -2,7 +2,7 @@
 @font-face { font-family: cardo_italic; src: url(../fonts/Cardo-Italic.ttf); font-weight: normal; font-style: italic; }
 @font-face { font-family: cardo_bold; src: url(../fonts/Cardo-Bold.ttf); font-weight: bold; font-style: normal; }
 
-html{ background-color: #fbf7e8; font-family: cardo; font-size: 40px; }
+html{ background-color: #fbf7e8; font-family: cardo; font-size: 60px; }
 
 a{ text-decoration: none; color: #000; }
 a:hover{ color: #444; }
@@ -14,12 +14,13 @@ a:hover{ color: #444; }
 .z_mid{  z-index: 1; }
 .z_front{ z-index: 2; }
 
-.content_holder{ width: 80%; height: 100%; margin: 8% auto; font-size: 60%; }
+.content_holder{ width: 80%; height: 100%; margin: 10% auto; font-size: 60%; }
 
 .bottom{ position: fixed; bottom: 0; left: 0; }
 
 .title{ font-size: 140%; font-family:cardo_bold; }
-.sub_item{ font-size: 70%; }
+.item{ margin: 1% 0; }
+.sub_item{ font-size: 75%; }
 
 .edit_form{ font-size: 45%; }
 .edit_field{ margin: 25px 0; }
