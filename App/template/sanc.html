@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "_forms.html" as forms %}
+
+{% block content %}
+	{% for s in sancs %}
+    	<div class="edit_field">
+    		<span>{{ s.one }}</span>
+    		<span>{{ s.two }}</span>
+    		<span>{{ s.three }}</span>
+    		<span>{{ s.four }}</span>
+    		<span>{{ s.five }}</span>
+    	</div>
+    {% endfor %}
+    <form action="?{{ request.query_string }}" method="post" class="edit_form">
+    	<p>Enter five words and add to the list.</p>
+        {{ forms.render(form) }}
+        <div class="actions">
+            <input type="submit" value="add">
+        </div>
+    </form>
+{% endblock %}
