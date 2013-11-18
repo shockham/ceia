@@ -1,11 +1,13 @@
 from flask import Blueprint, render_template, request
-from model import Sanc
 from flask.ext.mongoengine.wtf import model_form
+from model import Sanc
+from stats import track_stats
 
 sanc = Blueprint('sanc', __name__, template_folder='../template')
 
 
 @sanc.route('/sanc/', methods=['GET', 'POST'])
+@track_stats
 def sanc_route():
 	
 	#get all the sancs
