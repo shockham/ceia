@@ -2,7 +2,7 @@
 @font-face { font-family: cardo_italic; src: url(../fonts/Cardo-Italic.ttf); font-weight: normal; font-style: italic; }
 @font-face { font-family: cardo_bold; src: url(../fonts/Cardo-Bold.ttf); font-weight: bold; font-style: normal; }
 
-html{ background-color: #fbf7e8; font-family: cardo; font-size: 60px; }
+html{ background-color: #fff5ff; font-family: cardo; font-size: 60px; }
 
 a{ text-decoration: none; color: #000; }
 a:hover{ color: #777; }
