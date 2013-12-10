@@ -24,14 +24,10 @@ def concept(concept_slug):
 @routes.route('/<concept_slug>/edit', methods=['GET', 'POST'])
 @requires_auth
 def edit_concept(concept_slug):
-    #get the concept object from db
     concept = Concept.objects(slug=concept_slug).first()
-
-    #if it doesn't exist create new one
     if not concept:
         concept = Concept()
 
-    #model the form
     form_cls = model_form(Concept,  exclude=('created_at', 'slug'))
 
     if request.method == 'POST':
