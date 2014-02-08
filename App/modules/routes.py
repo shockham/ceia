@@ -3,6 +3,8 @@ from flask.ext.mongoengine.wtf import model_form
 from model import Concept, Stat
 from auth import requires_auth
 from stats import track_stats
+import os
+from werkzeug import secure_filename
 
 routes = Blueprint('routes', __name__, template_folder='../template')
 
@@ -41,6 +43,17 @@ def edit_concept(concept_slug):
         form = form_cls(obj=concept)
 
     return render_template('edit.html', concept=concept, form=form)    
+
+@routes.route('/upload_file', methods=['GET', 'POST'])
+@requires_auth
+def upload_file():
+    static_folder = os.getcwd() + '/App/static/uploaded_images'
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and '.' in file.filename and file.filename.rsplit('.', 1)[1] in ['pdf', 'png', 'jpg', 'jpeg', 'gif']:
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(static_folder, filename))
+    return render_template('file_uploader.html', files=os.listdir(static_folder))
 
 @routes.route('/error')
 @track_stats

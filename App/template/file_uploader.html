@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Upload new File</h1>
+    <form action="/upload_file" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    <table>
+        <tbody>
+            {% for file in files %}
+                <tr><td>
+                    <img class="fill" src="{{url_for('static', filename='uploaded_images/'+file)}}">
+                </td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
