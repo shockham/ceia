@@ -1,9 +1,10 @@
-from flask import Flask, render_template, make_response
+import os
+from flask import Flask, render_template, make_response, send_from_directory
 from flask.ext.mongoengine import MongoEngine
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-app.debug = False
+app.debug = True
 app.config.from_pyfile('config.cfg')
 
 db = MongoEngine(app)
@@ -46,6 +47,11 @@ def sitemap():
 @app.route('/robots.txt')
 def robots():
     return render_template('robots.txt')
+
+@app.route('/favicon.ico/')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'images/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 def register_blueprints(app):
     from App.modules.routes import routes
