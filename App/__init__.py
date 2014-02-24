@@ -3,7 +3,7 @@ from flask.ext.mongoengine import MongoEngine
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-app.debug = True
+app.debug = False
 app.config.from_pyfile('config.cfg')
 
 db = MongoEngine(app)
@@ -16,6 +16,10 @@ def page_not_found(error):
 @app.errorhandler(500)
 def page_broken(error):
     return render_template('error.html'), 500
+
+@app.errorhandler(502)
+def page_broken(error):
+    return render_template('error.html'), 502
 
 @app.errorhandler(413)
 def upload_large(error):
