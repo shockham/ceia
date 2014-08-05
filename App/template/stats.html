@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <table class="stats">
+    <table class="smallest_font">
         <thead>
             <tr>
                 <th>page url</th>
@@ -11,7 +11,7 @@
         <tbody>
             {% for s in stats %}
                 <tr>
-                    <td>{{ s.page_url }}</td>
+                    <td class="max_size">{{ s.page_url }}</td>
                     <td>{{ s.visits }}</td>
                     <td>{{ s.created_at }}</td>
                 <tr>
