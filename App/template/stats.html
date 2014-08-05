@@ -11,7 +11,7 @@
         <tbody>
             {% for s in stats %}
                 <tr>
-                    <td class="max_size">{{ s.page_url }}</td>
+                    <td class="max_size"><a href="{{ s.page_url }}">{{ s.page_url }}</a></td>
                     <td>{{ s.visits }}</td>
                     <td>{{ s.created_at }}</td>
                 <tr>
