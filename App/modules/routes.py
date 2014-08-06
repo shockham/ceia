@@ -1,10 +1,11 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, make_response
 from flask.ext.mongoengine.wtf import model_form
 from model import Concept, Stat
 from auth import requires_auth
 from stats import track_stats
 import os
 from werkzeug import secure_filename
+from feedgen.feed import FeedGenerator
 
 routes = Blueprint('routes', __name__, template_folder='../template')
 
@@ -60,10 +61,34 @@ def upload_file():
 def error():
     return render_template('error.html')
 
-
 @routes.route('/stats')
 @track_stats
 def stats_view():
     stats = Stat.objects()
     total = sum([s.visits for s in stats])
     return render_template('stats.html', stats=stats, total=total)
+
+@routes.route('/rss')
+@routes.route('/rss/')
+def rss():
+    fg = FeedGenerator()
+    fg.id('http://shockham.com/')
+    fg.title('shockham.')
+    fg.author( {'name':'shockham','email':''} )
+    fg.link( href='http://shockham.com', rel='alternate' )
+    fg.logo(url_for('static', filename='images/new_logo.png'))
+    fg.subtitle('RSS feed for shockhams site!')
+    fg.link( href='http://shockham.com/rss', rel='self' )
+    fg.language('en')
+
+    concepts = Concept.objects()
+    for concept in concepts:
+        fe = fg.add_entry()
+        fe.id('http://shockham.com/'+concept.slug)
+        fe.title(concept.title)
+
+    response = make_response(fg.rss_str(pretty=True))
+    response.headers["Content-Type"] = "application/xml"   
+
+    return response
+
