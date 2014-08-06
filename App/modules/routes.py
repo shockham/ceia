@@ -70,6 +70,7 @@ def stats_view():
 
 @routes.route('/rss')
 @routes.route('/rss/')
+@track_stats
 def rss():
     fg = FeedGenerator()
     fg.id('http://shockham.com/')
