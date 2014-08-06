@@ -65,4 +65,5 @@ def error():
 @track_stats
 def stats_view():
     stats = Stat.objects()
-    return render_template('stats.html', stats=stats)
+    total = sum([s.visits for s in stats])
+    return render_template('stats.html', stats=stats, total=total)

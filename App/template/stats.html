@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
+    <div>
+        Total: {{ total }}
+    </div>
     <table class="smallest_font">
         <thead>
             <tr>
                 <th>page url</th>
+                <th>% of visits</th>
                 <th>visits</th>
                 <th>last visited</th>
             </tr>
@@ -12,6 +16,7 @@
             {% for s in stats %}
                 <tr>
                     <td class="max_size"><a href="{{ s.page_url }}">{{ s.page_url }}</a></td>
+                    <td>{{ (s.visits/total)*100 }}</td>
                     <td>{{ s.visits }}</td>
                     <td>{{ s.created_at }}</td>
                 <tr>
