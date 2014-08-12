@@ -3,6 +3,7 @@ from functools import wraps
 from flask import request
 from model import Stat
 
+
 def track_stats(f):
     @wraps(f)
     def decorated(*args, **kwargs):
