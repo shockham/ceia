@@ -3,6 +3,7 @@
 @font-face { font-family: cardo_bold; src: url(../fonts/OleoScriptSwashCaps-Bold.ttf); font-weight: bold; font-style: normal; }
 
 html{ background-color: #fff5ff; font-family: cardo; font-size: 60px; }
+hr{ border:solid 1px #000; }
 
 a{ text-decoration: none; color: #666; }
 a:hover{ color: #777; }
