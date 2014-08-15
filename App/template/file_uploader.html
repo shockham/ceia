@@ -10,7 +10,7 @@
         <tbody>
             {% for file in files %}
                 <tr><td>
-                    {% if ['wav','mp3'] in file %}
+                    {% if 'mp3' in file %}
                         <audio class="fill" src="{{url_for('static',filename='uploaded_images/'+file)}}"></audio>
                     {% else %}
                         <img class="fill" src="{{url_for('static',filename='uploaded_images/'+file)}}">
