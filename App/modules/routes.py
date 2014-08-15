@@ -55,7 +55,7 @@ def upload_file():
     static_folder = os.getcwd() + '/App/static/uploaded_images'
     if request.method == 'POST':
         file = request.files['file']
-        if file and '.' in file.filename and file.filename.rsplit('.', 1)[1] in ['pdf', 'png', 'jpg', 'jpeg', 'gif']:
+        if file and '.' in file.filename and file.filename.rsplit('.', 1)[1] in ['pdf', 'png', 'jpg', 'jpeg', 'gif', 'wav', 'mp3']:
             filename = secure_filename(file.filename)
             file.save(os.path.join(static_folder, filename))
     return render_template('file_uploader.html', files=os.listdir(static_folder))

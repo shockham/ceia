@@ -10,7 +10,12 @@
         <tbody>
             {% for file in files %}
                 <tr><td>
-                    <img class="fill" src="{{url_for('static', filename='uploaded_images/'+file)}}">
+                    {% if ['wav','mp3'] in file %}
+                        <audio class="fill" src="{{url_for('static',filename='uploaded_images/'+file)}}"></audio>
+                    {% else %}
+                        <img class="fill" src="{{url_for('static',filename='uploaded_images/'+file)}}">
+                    {% endif %}
+                    
                 </td></tr>
             {% endfor %}
         </tbody>
