@@ -1,8 +1,6 @@
-@font-face { font-family: cardo; src: url(../fonts/OleoScriptSwashCaps-Regular.ttf); font-weight: normal; font-style: normal; }
-/*@font-face { font-family: cardo_italic; src: url(../fonts/Cardo-Italic.ttf); font-weight: normal; font-style: italic; }*/
-@font-face { font-family: cardo_bold; src: url(../fonts/OleoScriptSwashCaps-Bold.ttf); font-weight: bold; font-style: normal; }
+@font-face { font-family: gilda; src: url(../fonts/GildaDisplay-Regular.ttf); font-weight: normal; font-style: normal; }
 
-html{ background-color: #fff5ff; font-family: cardo; font-size: 60px; }
+html{ background-color: #fff5ff; font-family: gilda; font-size: 60px; }
 hr{ border:solid 1px #000; }
 
 a{ text-decoration: none; color: #666; }
@@ -20,7 +18,7 @@ a:hover{ color: #777; }
 
 .bottom{ position: fixed; bottom: 0; left: 0; }
 
-.title{ font-size: 140%; font-family:cardo_bold; }
+.title{ font-size: 140%; }
 .item{ margin: 1% 0; }
 .sub_item{ font-size: 75%; }
 
