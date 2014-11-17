@@ -6,6 +6,8 @@ from stats import track_stats
 import os
 from werkzeug import secure_filename
 from feedgen.feed import FeedGenerator
+import markdown
+from mongoengine.queryset import Q
 
 routes = Blueprint('routes', __name__, template_folder='../template')
 
@@ -41,6 +43,7 @@ def edit_concept(concept_slug):
         if form.validate():
             form.populate_obj(concept)
             concept.slug = concept_slug
+            concept.markup = markdown.markdown(concept.markup) 
             concept.save()
             return redirect(url_for('routes.concept', concept_slug=concept.slug))
     else:
@@ -89,7 +92,7 @@ def rss():
     fg.link(href='http://shockham.com/rss', rel='self')
     fg.language('en')
 
-    concepts = Concept.objects()
+    concepts = Concept.objects(Q(slug__ne='none') | Q(parent__ne='none'))
     for concept in concepts:
         fe = fg.add_entry()
         fe.id('http://shockham.com/' + concept.slug)
