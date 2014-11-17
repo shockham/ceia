@@ -92,7 +92,7 @@ def rss():
     fg.link(href='http://shockham.com/rss', rel='self')
     fg.language('en')
 
-    concepts = Concept.objects(Q(slug__ne='none') | Q(parent__ne='none'))
+    concepts = Concept.objects(Q(slug__ne='none') & Q(parent__ne='none'))
     for concept in concepts:
         fe = fg.add_entry()
         fe.id('http://shockham.com/' + concept.slug)
