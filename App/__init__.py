@@ -4,8 +4,6 @@ from flask.ext.mongoengine import MongoEngine
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-#TODO put in config
-app.debug = False
 app.config.from_pyfile('config.cfg')
 
 db = MongoEngine(app)
