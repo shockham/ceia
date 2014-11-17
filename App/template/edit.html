@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% import "_forms.html" as forms %}
 
-{% block head_add %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/codemirror.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base16-dark.css') }}">
-{% endblock %}
-
 {% block content %}
     <form action="?{{ request.query_string }}" method="post" class="edit_form">
         {{ forms.render(form) }}
@@ -15,20 +10,3 @@
         </div>
     </form>
 {% endblock %}
-
-{% block page_js %}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/codemirror.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/xml.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/css.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/javascript.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/htmlmixed.js') }}"></script>
-    <script type="text/javascript">
-        var editor = CodeMirror.fromTextArea(document.getElementById('markup'), { 
-            lineNumbers: true,
-            mode: "text/html",
-            matchBrackets: true,
-            styleActiveLine: true,
-            theme: "base16-dark"
-        });
-    </script>
-{% endblock%}
