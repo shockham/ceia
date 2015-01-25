@@ -42,18 +42,3 @@ class User(db.Document):
         'ordering': ['-created_at']
     }
 
-
-class Sanc(db.Document):
-    one = db.StringField(required=True)
-    two = db.StringField(required=True)
-    three = db.StringField(required=True)
-    four = db.StringField(required=True)
-    five = db.StringField(required=True)
-    created_at = db.DateTimeField(
-        default=datetime.datetime.utcnow(), required=True)
-
-    meta = {
-        'allow_inheritance': True,
-        'indexes': ['-created_at'],
-        'ordering': ['-created_at']
-    }

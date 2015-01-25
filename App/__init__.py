@@ -60,9 +60,7 @@ def favicon():
 
 def register_blueprints(app):
     from App.modules.routes import routes
-    from App.modules.sanc import sanc
     app.register_blueprint(routes)
-    app.register_blueprint(sanc)
 
 register_blueprints(app)
 
