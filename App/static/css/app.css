@@ -1,7 +1,6 @@
 @font-face { font-family: gilda; src: url(../fonts/GildaDisplay-Regular.ttf); font-weight: normal; font-style: normal; }
 
-html{ background-color: #fff5ff; font-family: gilda; font-size: 60px; height:100%;width:100%; }
-body{ height: 100%; }
+html{ background-color: #fff5ff; font-family: gilda; font-size: 60px; width:100%; }
 hr{ border:solid 1px #000; }
 
 a{ text-decoration: none; color: #666; }
@@ -15,12 +14,12 @@ a:hover{ color: #777; }
 .al_right{ text-align: right; }
 
 .fixed_top_left{ position: fixed; top: 0; left: 0; }
-.abs_bottom_left{ position: absolute; bottom: 0; left: 0;}
-.abs_bottom_right{ position: absolute; bottom: 0; right: 0;}
+.fixed_bottom_left{ position: fixed; bottom: 0; left: 0;}
+.fixed_bottom_right{ position: fixed; bottom: 0; right: 0;}
 .z_mid{  z-index: 1; }
 .z_front{ z-index: 2; }
 
-.content_holder{ width: 80%; height: 100%; position: absolute; margin: auto; top:40%; font-size: 60%; }
+.content_holder{ width: 80%; height: 100%;  margin: 25% auto 10%; font-size: 60%; }
 
 .bottom{ position: fixed; bottom: 0; left: 0; }
 
