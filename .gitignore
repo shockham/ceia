@@ -6,3 +6,4 @@ TODO
 App/config.cfg
 ceia.conf
 ceia.ini
+**/__pycache__

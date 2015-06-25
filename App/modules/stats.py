@@ -1,7 +1,7 @@
 from datetime import datetime
 from functools import wraps
 from flask import request
-from model import Stat
+from .model import Stat
 
 
 def track_stats(f):

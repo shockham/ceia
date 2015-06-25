@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, url_for, make_response
 from flask.ext.mongoengine.wtf import model_form
-from model import Concept, Stat
-from auth import requires_auth
-from stats import track_stats
+from .model import Concept, Stat
+from .auth import requires_auth
+from .stats import track_stats
 import os
 from werkzeug import secure_filename
 from feedgen.feed import FeedGenerator

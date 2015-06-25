@@ -1,7 +1,7 @@
 import hashlib
 from functools import wraps
 from flask import request, Response
-from model import User
+from .model import User
 
 
 def check_auth(username, password):
