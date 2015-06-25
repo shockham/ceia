@@ -22,10 +22,6 @@
 
   style_type = Math.random();
 
-  if (style_type > 0.5) {
-    document.getElementById('header').style.backgroundColor = "transparent";
-  }
-
   update = function() {
     var i, _i;
 

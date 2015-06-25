@@ -17,8 +17,6 @@ canvas.width = header.clientWidth
 pulser = 0
 
 style_type = Math.random()
-if style_type > 0.5
-    document.getElementById('header').style.backgroundColor = "transparent"
 
 update = () ->
     context.clearRect(0, 0, canvas.width, canvas.height)
