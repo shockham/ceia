@@ -10,26 +10,25 @@
     </head>
     <body>
         <h1 id="header" class="bar fixed_top_left bar_h" >
+            <canvas id="header_canvas" class="z_mid fixed_top_left fill bar_h"></canvas>
             <a href="{{ url_for('routes.index') }}">
                 <img id="logo" class="z_front fixed_top_left bar_h" src="{{ url_for('static', filename='images/new_logo_large.png')}}" alt="shockham">
             </a>
-            <canvas id="header_canvas" class="z_mid fixed_top_left fill bar_h"></canvas>
         </h1>
+        <div class="fixed_top_right z_front smallest_font al_right bar_h">
+            <a href="https://twitter.com/shockham">
+                <img class="half_h" src="/static/images/twitter.png">
+            </a>
+            <a href="https://github.com/shockham">
+                <img class="half_h" src="/static/images/github.png">
+            </a>
+            <a href="https://soundcloud.com/samyouwell">
+                <img class="half_h" src="/static/images/soundcloud.png">
+            </a>
+        </div>
         <div class="content_holder">
             {% block content %}
             {% endblock %}
-        </div>
-        <div class="fixed_top_right smallest_font al_right bar_h">
-            <a href="https://twitter.com/shockham">
-                <img class="fill_h" src="/static/images/twitter.png">
-            </a>
-            <a  href="https://github.com/shockham">
-                <img class="fill_h" src="/static/images/github.png">
-            </a>
-            <a href="https://soundcloud.com/samyouwell">
-                <img class="fill_h" src="/static/images/soundcloud.png">
-            </a>
-            <p>shockham</p>
         </div>
         <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
         {% block page_js %}

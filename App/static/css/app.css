@@ -1,14 +1,17 @@
 @font-face { font-family: gilda; src: url(../fonts/GildaDisplay-Regular.ttf); font-weight: normal; font-style: normal; }
 
-html{ background-color: #fff5ff; font-family: gilda; font-size: 60px; width:100%; }
+html{ background-color: #000; font-family: gilda; font-size: 60px; width:100%; color: #fff; }
 hr{ border:solid 1px #000; }
 
-a{ text-decoration: none; color: #666; }
-a:hover{ color: #777; }
+a{ text-decoration: none; color: #fff; }
+a:hover{ color: #eee; opacity: 0.5; }
 
-.bar{ width: 100%; height: 40%; background-color: #a9a9a9; opacity: 0.6; border-bottom: 2px solid #000; }
+#logo:hover{ filter: invert(1); }
+
+.bar{ width: 100%; height: 40%; background-color: #6b6b6b; border-bottom: 1px solid #fff; }
 .fill{ width: 100%; }
 .fill_h{ height: 100%; }
+.half_h{ height: 50%; filter: invert(1); }
 .bar_h{ height: 10%; }
 .right{ float:right; }
 .al_right{ text-align: right; }
@@ -18,6 +21,7 @@ a:hover{ color: #777; }
 .fixed_bottom_left{ position: fixed; bottom: 0; left: 0;}
 .fixed_bottom_right{ position: fixed; bottom: 0; right: 0;}
 
+.z_back{  z-index: -1; }
 .z_mid{  z-index: 1; }
 .z_front{ z-index: 2; }
 
@@ -30,7 +34,7 @@ a:hover{ color: #777; }
 .sub_item{ font-size: 75%; }
 
 .edit_form{ font-size: 45%; }
-.edit_field{ margin: 25px 0; }
+.edit_field{ margin: 10% 0; }
 
 .smallest_font{ font-size: 50%; }
 .max_size{ max-width: 550px; overflow: hidden; text-overflow: ellipsis; }
