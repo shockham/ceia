@@ -3,10 +3,6 @@ ceia
 
 The code for my personal site.
 
-Dependencies:
-flask
-mongoengine
-
 ----
 
 ### License ###
