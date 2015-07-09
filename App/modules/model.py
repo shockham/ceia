@@ -29,6 +29,19 @@ class Stat(db.Document):
         'ordering': ['-created_at']
     }
 
+class Score(db.Document):
+    created_at = db.DateTimeField(
+        default=datetime.datetime.utcnow(), required=True)
+    score = db.IntField(default=0)
+    user = db.StringField(max_length=225, required=True, unique=True)
+    tag = db.StringField(max_length=225, required=True)
+
+    meta = {
+        'allow_inheritance': False,
+        'indexes': ['-score'],
+        'ordering': ['-score']
+    }
+
 
 class User(db.Document):
     username = db.StringField(required=True)
