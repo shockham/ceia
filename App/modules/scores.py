@@ -17,7 +17,7 @@ def update_score(tag):
                 score=score_val,
                 tag=tag
             )
-    elif score_val > score.score: 
+    elif int(score_val) > score.score: 
         score.score = score_val
     
     success = score.save()
