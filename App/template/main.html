@@ -2,7 +2,7 @@
 {% block content %}
     <ul>
         {% for c in concepts %}
-            <li><a class="item" href="{{ url_for('routes.concept', concept_slug=c.slug) }}" >{{ c.title }}.</a></li>
+            <li><a class="item" href="{{ url_for('routes.concept', concept_slug=c.slug) }}" >{{ c.title }}</a></li>
         {% endfor %}
     </ul>
     {% if about %}
