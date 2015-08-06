@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <h2 class="title">{{ concept.title }}</h2>
-    <a class="smallest_font" href="{{ url_for('routes.concept', concept_slug=concept.parent) }}">
+    <a class="smallest_font back" href="{{ url_for('routes.concept', concept_slug=concept.parent) }}">
     {% if concept.parent == "" %}
     	< home
     {% else %}
