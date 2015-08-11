@@ -1,6 +1,15 @@
 @font-face { font-family: gilda; src: url(../fonts/GildaDisplay-Regular.ttf); font-weight: normal; font-style: normal; }
 
-html{ background-color: #000; font-family: gilda; font-size: 60px; width:100%; color: #fff; }
+html{ background-color: #000; font-family: gilda; font-size: 60px; width:100%; color: #fff;
+    text-shadow: 
+    -1px 0 1px hsla(0,100%,50%,0.5) /*red*/,
+    -2px 0 2px hsla(39, 100%, 50%,0.5) /*orange*/,
+    -3px 0 3px hsla(60, 100%, 50%, 0.6) /*yellow*/,
+    1px 0 1px hsla(240,100%,50%,0.5) /*navy*/,
+    2px 0 2px hsla(240,100%,100%,0.5) /*blue*/,
+    3px 0 3px hsla(180,100%,50%,0.7) /*cyan*/;
+}
+
 hr{ border:solid 1px #000; }
 ul{ display: block; width: 50%; margin: auto; }
 
