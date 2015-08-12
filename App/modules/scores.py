@@ -27,6 +27,6 @@ def update_score(tag):
 
 @scores.route('/get_scores/<tag>')
 def get_scores(tag):
-    scores = Score.objects[:10] 
+    scores = Score.objects(tag=tag)[:10] 
     str_score = ''.join("%s. %s - %s\n" % (i, s.user, s.score) for i,s in enumerate(scores, start=1))
     return "global:\n%s" % str_score
