@@ -33,7 +33,7 @@ class Score(db.Document):
     created_at = db.DateTimeField(
         default=datetime.datetime.utcnow(), required=True)
     score = db.IntField(default=0)
-    user = db.StringField(max_length=225, required=True, unique=True)
+    user = db.StringField(max_length=225, required=True)
     tag = db.StringField(max_length=225, required=True)
 
     meta = {
