@@ -8,7 +8,7 @@ scores = Blueprint('scores', __name__, template_folder='../template')
 @scores.route('/update_score/<tag>', methods=['POST'])
 @requires_salt
 def update_score(tag):
-    score = Score.objects(user=request.form.get('user')).first()
+    score = Score.objects(tag=tag, user=request.form.get('user')).first()
     score_val = request.form.get('score')
     
     if not score:
