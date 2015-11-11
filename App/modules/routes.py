@@ -8,6 +8,8 @@ from werkzeug import secure_filename
 from feedgen.feed import FeedGenerator
 import markdown
 from mongoengine.queryset import Q
+import random
+import pycorpora
 
 routes = Blueprint('routes', __name__, template_folder='../template')
 
@@ -102,3 +104,14 @@ def rss():
     response.headers["Content-Type"] = "application/xml"
 
     return response
+
+
+@routes.route('/band_name')
+@track_stats
+def band_name():
+    names = "<b>Band names:</b>"
+    for i in range(100):
+        common_word = random.choice(pycorpora.words.common['commonWords'])
+        past_verb = random.choice(pycorpora.words.verbs['verbs'])['past']
+        names += "<div>%s %s</div>" % (common_word, past_verb)
+    return names
